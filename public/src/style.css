@@ -1,0 +1,108 @@
+*{
+  background-color: whitesmoke;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+header{
+  text-align: center;
+}
+
+.logo{
+  width: 100px;
+  margin-bottom: -50px;
+}
+
+h1{
+  color: #0EAD69;
+  font-size: 5rem;
+  padding: 25px;
+}
+
+header p{
+  color: #F283B6;
+  font-weight: bold;
+  margin-top: -40px;
+}
+
+form{
+  display: flex;
+  flex-flow: column wrap;
+  margin: 100px auto;
+  width: 300px;
+}
+
+form input, .new{
+  border: 1px solid rgb(201, 201, 201);
+  border-radius: 5px;
+  box-shadow: 0px 0.5px 3px grey;
+  height: 40px;
+  margin-bottom: 15px;
+  padding-left: 10px;
+}
+
+.submit, .new{
+  background-color: #0EAD69;
+  border: none;
+  color: white;
+  font-size: 1em;
+  font-weight: bold;
+  margin-top: 20px;
+  padding-left: 0;
+}
+
+.submit:hover{
+  background-color: #1DED92;
+}
+
+.mdp, .mdp:visited{
+  color: grey;
+  font-size: 0.8em;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.new{
+  background-color: #F283B6;
+  line-height: 40px;
+  text-align: center;
+}
+
+.new:hover{
+  background-color: #EDBFB7;
+}
+
+form p{
+  color: grey;
+  font-size: 0.8em;
+  text-align: center;
+  margin-top: 10px;
+}
+
+footer{
+  bottom: 5px;
+  color: grey;
+  font-size: 0.8em;
+  position: fixed;
+  right: 5px;
+}
+
+.wel{
+  color: rgb(201, 201, 201);
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-top: 150px;
+  text-align: center;
+}
+
+.welco{
+  margin-bottom: 30px;
+  margin-top: -50px;
+}
+
+.m{
+  margin-bottom: 20px;
+  margin-top: -20px;
+}

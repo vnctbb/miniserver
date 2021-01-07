@@ -1,0 +1,12 @@
+doctype html
+head
+  include includes/head.pug
+body
+  include includes/header.pug
+  form(action="messpass" method="post")
+    p.m Entrez votre adresse mail, nous vous enverrons un mail pour de renouveler votre mot de passe
+    input(type="email" name="email" required placeholder="Adresse mail")
+    input.submit(type="submit" value='Renouveler votre mot de passe')
+    p Vous n'avez pas de compte?
+    a.new(href='/newaccount') Créer un compte
+  include includes/footer.pug

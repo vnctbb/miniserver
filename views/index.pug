@@ -1,0 +1,14 @@
+doctype html
+head
+  include includes/head.pug
+body
+  include includes/header.pug
+  form(action="connect" method="post")
+    p.welco Bienvenu chez Clover !
+    input(type="email" name="email" required placeholder="Adresse mail")
+    input(type="password" name="mdp" required placeholder="Mot de passe")
+    a.mdp(href="/newpass") Mot de passe oublié
+    input.submit(type="submit" value='Se connecter')
+    p Vous n'avez pas de compte?
+    a.new(href='/newaccount') Créer un compte
+  include includes/footer.pug

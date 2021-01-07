@@ -1,0 +1,9 @@
+doctype html
+head
+  include includes/head.pug
+body
+  include includes/header.pug
+  form(action="index" method="post")
+    p.m Vous allez recevoir un mail dans quelques minutes, avec un lien pour renouveller votre mot de passe.
+    input.submit(type="submit" value='Retour')
+  include includes/footer.pug

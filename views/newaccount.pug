@@ -1,0 +1,14 @@
+doctype html
+head
+  include includes/head.pug
+body
+  include includes/header.pug
+  form(action="create" method="post")
+    p.welco Inscrivez-vous !
+    input(type="text" name="username" required placeholder="Pseudonyme")
+    input(type="email" name="email" required placeholder="Adresse mail")
+    input(type="password" name="mdp" required placeholder="Mot de passe")
+    input.submit(type="submit" value='Créer un compte')
+    p Vous avez déja un compte?
+    a.new(href='/') Retour
+  include includes/footer.pug
