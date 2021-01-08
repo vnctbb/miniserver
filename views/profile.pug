@@ -3,5 +3,39 @@ head
   include includes/head2.pug
 body
   include includes/header.pug
-  p.wel welcome on your profile #{username}
+  p.wel Bienvenue sur ton profil #{username}
+  p.wel.rose Tes publications
+  div.list
+    if(article[0])
+      div.art
+        a(href='#') #{article[0].titre}
+        p  - par #{article[0].auteur} - publié le #{article[0].date} &nbsp
+        include includes/ud.pug
+    if(article[1])
+      div.art
+        a(href='#') #{article[1].titre}
+        p  - par #{article[1].auteur} - publié le #{article[1].date} &nbsp
+        include includes/ud.pug
+    if(article[2])
+      div.art
+        a(href='#') #{article[2].titre}
+        p  - par #{article[2].auteur} - publié le #{article[2].date} &nbsp
+        include includes/ud.pug
+    if(article[3])
+      div.art
+        a(href='#') #{article[3].titre}
+        p  - par #{article[3].auteur} - publié le #{article[3].date} &nbsp
+        include includes/ud.pug
+    if(article[4])
+      div.art
+        a(href='#') #{article[4].titre}
+        p  - par #{article[4].auteur} - publié le #{article[4].date} &nbsp
+        include includes/ud.pug
+    if(article[5])
+      div.art
+        a(href='#') #{article[5].titre}
+        p  - par #{article[5].auteur} - publié le #{article[5].date} &nbsp
+        include includes/ud.pug
+  .button
+    a.new.pad(href='newart') Nouvel article
   include includes/footer.pug

@@ -93,8 +93,16 @@ footer{
   color: rgb(201, 201, 201);
   font-size: 1.5em;
   font-weight: bold;
-  margin-top: 150px;
+  margin-top: 50px;
   text-align: center;
+}
+
+.rose{
+  color: #F283B6;
+}
+
+.vert{
+  color: #0EAD69;
 }
 
 .welco{
@@ -105,4 +113,34 @@ footer{
 .m{
   margin-bottom: 20px;
   margin-top: -20px;
+}
+
+.list{
+  font-size: 0.9em;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.list p{
+  color: rgb(170, 169, 169);
+  display: inline;
+}
+
+.list a{
+  color: #0EAD69;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.art{
+  margin-top: 15px;
+}
+
+.button{
+  margin-top: 100px;
+  text-align: center;
+}
+
+.pad{
+  padding: 15px;
 }

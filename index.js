@@ -5,6 +5,8 @@ const app = express();
 const MongoClient = require('mongodb').MongoClient;
 let mongoClient;
 
+const session = require('express-session');
+
 const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({
   extended : false
@@ -42,6 +44,7 @@ app.post('/connect', (req, res, next) => {
   let find = false;
   let identity;
   const collection = mongoClient.collection('userbanks');
+  const collectionArticle = mongoClient.collection('article');
   collection.find().toArray((err,data) => {
     data.forEach(object => {
       if(object.email === user.email && object.mdp === user.mdp){
@@ -51,7 +54,9 @@ app.post('/connect', (req, res, next) => {
       }
     });
     if(find){
-      res.render('profile', {username : identity.username});
+      collectionArticle.find({username : identity.username}).sort({id : -1}).toArray((err,data) => {
+        res.render('profile', {username : identity.username, article : data});
+      });
     } else {
       res.render('index');
     }
@@ -83,12 +88,45 @@ app.post('/create', (req, res, next) => {
   });
 });
 
+app.post('/createArt', (req, res, next) => {
+  const user = req.body;
+  let find = false;
+  let identity;
+  const collection = mongoClient.collection('userbanks');
+  collection.find().toArray((err,data) => {
+    data.forEach(object => {
+      if(object.email === user.email || object.username === user.username){
+        find = true;
+      }
+    });
+    if(find){
+      res.render('newaccount');
+    } else {
+      user.id = data.length + 1;
+      collection.insertOne(user, (err, res) => {
+        if(err) throw err;
+        console.log('1 user inserted');
+      })
+      connect = true;
+      res.render('profile', {username : user.username});
+    }
+  });
+});
+
 app.get('/newaccount', (req, res) => {
   res.render('newaccount');
 });
 
 app.get('/newpass', (req, res) => {
   res.render('newpass');
+});
+
+app.get('/newart', (req, res) => {
+  res.render('newarticle');
+});
+
+app.get('/profile', (req, res) => {
+  res.render('profile');
 });
 
 app.post('/messpass', (req, res) => {

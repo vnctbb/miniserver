@@ -1,0 +1,14 @@
+doctype html
+head
+  include includes/head.pug
+body
+  include includes/header.pug
+  form(action="createart" method="post")
+    p.welco Exprimez vous !
+    input(type="text" name="auteur" required placeholder="Auteur")
+    input(type="text" name="auteur" required placeholder="Date (format aa/aa/aaaa)")
+    input(type="text" name="auteur" required placeholder="Titre de l'article")
+    textarea(name="article", cols="30", rows="10" maxlength=1000)
+    input.submit(type="submit" value='Créer')
+    a.new(href='#') Retour
+  include includes/footer.pug
